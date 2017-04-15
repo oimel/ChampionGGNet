@@ -1,0 +1,1142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ChampionGG</name>
+    </assembly>
+    <members>
+        <member name="T:ChampionGG.Api">
+            <summary>API of the League of Legends statistics website champion.gg</summary>
+        </member>
+        <member name="M:ChampionGG.Api.#ctor(System.String)">
+            <summary>Creates new api instance</summary>
+            <param name="ApiKey">Get an api key at http://api.champion.gg/ </param>
+        </member>
+        <member name="M:ChampionGG.Api.#ctor(System.String,System.Uri)">
+            <summary>Creates new api instance using the default url</summary>
+            <param name="ApiKey">Get an api key at http://api.champion.gg/ </param>
+            <param name="BaseUrl">Base path to the web api</param>
+        </member>
+        <member name="M:ChampionGG.Api.GetBasicChampionList">
+            <summary>Returns a basic champion list</summary>
+            <returns>Task to get basic champion list</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetBasicChampionList(System.Threading.CancellationToken)">
+            <summary>Returns a basic champion list</summary>
+            <returns>Task to get basic champion list</returns>
+            <param name="CancelToken"></param>
+        </member>
+        <member name="M:ChampionGG.Api.GetChampion(System.String)">
+            <summary>Returns data for champion</summary>
+            <returns>Task to get data for champion</returns>
+            <param name="ChampionKey"></param>
+        </member>
+        <member name="M:ChampionGG.Api.GetChampion(System.String,System.Threading.CancellationToken)">
+            <summary>Returns data for champion</summary>
+            <returns>Task to get data for champion</returns>
+            <param name="ChampionKey"></param>
+            <param name="CancelToken"></param>
+        </member>
+        <member name="M:ChampionGG.Api.GetMatchups(System.String)">
+            <summary>Returns matchup data for a champion</summary>
+            <param name="ChampionKey"></param>
+            <returns>Task to get matchup data for champion</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetMatchups(System.String,System.Threading.CancellationToken)">
+            <summary>Returns matchup data for a champion</summary>
+            <param name="ChampionKey"></param>
+            /// <param name="CancelToken"></param>
+            <returns>Task to get matchup data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetMatchup(System.String,System.String)">
+            <summary>Returns matchup data for a champion and a specific opponent</summary>
+            <param name="ChampionKey"></param>
+            <param name="OpponentKey"></param>
+            <returns>Task to get matchup data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetMatchup(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>Returns matchup data for a champion and a specific opponent</summary>
+            <param name="ChampionKey"></param>
+            <param name="OpponentKey"></param>
+            <param name="CancelToken"></param>
+            <returns>Task to get matchup data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetItems(System.String,ChampionGG.Models.DataAspect,ChampionGG.Models.ItemAspect)">
+            <summary>Returns item data for a champion</summary>
+            <param name="ChampionKey"></param>
+            <param name="DataAspect"></param>
+            <param name="ItemAspect"></param>
+            <returns>Task to get item data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetItems(System.String,ChampionGG.Models.DataAspect,ChampionGG.Models.ItemAspect,System.Threading.CancellationToken)">
+            <summary>Returns item data for a champion</summary>
+            <param name="ChampionKey"></param>
+            <param name="DataAspect"></param>
+            <param name="ItemAspect"></param>
+            <param name="CancelToken"></param>
+            <returns>Task to get item data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetSkills(System.String,ChampionGG.Models.DataAspect)">
+            <summary>Returns skill data for a champion</summary>
+            <param name="ChampionKey"></param>
+            <param name="DataAspect"></param>
+            <returns>Task to get skill data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetSkills(System.String,ChampionGG.Models.DataAspect,System.Threading.CancellationToken)">
+            <summary>Returns skill data for a champion</summary>
+            <param name="ChampionKey"></param>
+            <param name="DataAspect"></param>
+            <param name="CancelToken"></param>
+            <returns>Task to get skill data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetSkillInfo(System.String)">
+            <summary>Returns skill information (names)</summary>
+            <param name="ChampionKey"></param>
+            <returns>Task to get skill information</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetSkillInfo(System.String,System.Threading.CancellationToken)">
+            <summary>Returns skill information (names)</summary>
+            <param name="ChampionKey"></param>
+            <param name="CancelToken"></param>
+            <returns>Task to get skill information</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetSummoners(System.String,ChampionGG.Models.DataAspect)">
+            <summary>Returns summoner spell data for a champion</summary>
+            <param name="ChampionKey"></param>
+            <param name="DataAspect"></param>
+            <returns>Task to get summoner spell data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetSummoners(System.String,ChampionGG.Models.DataAspect,System.Threading.CancellationToken)">
+            <summary>Returns summoner spell data for a champion</summary>
+            <param name="ChampionKey"></param>
+            <param name="DataAspect"></param>
+            <param name="CancelToken"></param>
+            <returns>Task to get summoner spell data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetRunes(System.String,ChampionGG.Models.DataAspect)">
+            <summary>Returns rune data for a champion</summary>
+            <param name="ChampionKey"></param>
+            <param name="DataAspect"></param>
+            <returns>Task to get rune data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetRunes(System.String,ChampionGG.Models.DataAspect,System.Threading.CancellationToken)">
+            <summary>Returns rune data for a champion</summary>
+            <param name="ChampionKey"></param>
+            <param name="DataAspect"></param>
+            <param name="CancelToken"></param>
+            <returns>Task to get rune data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetStats(System.Int32,System.Int32)">
+            <summary>Returns stats data for all champions</summary>
+            <param name="Page"></param>
+            <param name="Limit"></param>
+            <returns>Task to get stats data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetStats(System.Threading.CancellationToken,System.Int32,System.Int32)">
+            <summary>Returns stats data for all champions</summary>
+            <param name="CancelToken"></param>
+            <param name="Page"></param>
+            <param name="Limit"></param>
+            <returns>Task to get stats data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetStats(ChampionGG.Models.StatsAspect,System.Int32,System.Int32)">
+            <summary>Returns stats data for all champions by aspect</summary>
+            <param name="StatsAspect"></param>
+            <param name="Page"></param>
+            <param name="Limit"></param>
+            <returns>Task to get stats data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetStats(ChampionGG.Models.StatsAspect,System.Threading.CancellationToken,System.Int32,System.Int32)">
+            <summary>Returns stats data for all champions by aspect</summary>
+            <param name="StatsAspect"></param>
+            <param name="CancelToken"></param>
+            <param name="Page"></param>
+            <param name="Limit"></param>
+            <returns>Task to get stats data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetStats(System.String,System.Int32,System.Int32)">
+            <summary>Returns stats data for specific champion</summary>
+            <param name="ChampionKey"></param>
+            <param name="Page"></param>
+            <param name="Limit"></param>
+            <returns>Task to get stats data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetStats(System.String,System.Threading.CancellationToken,System.Int32,System.Int32)">
+            <summary>Returns stats data for specific champion</summary>
+            <param name="ChampionKey"></param>
+            <param name="CancelToken"></param>
+            <param name="Page"></param>
+            <param name="Limit"></param>
+            <returns>Task to get stats data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetStats(ChampionGG.Models.Role,System.Int32,System.Int32)">
+            <summary>Returns stats data for specific role</summary>
+            <param name="Role"></param>
+            <param name="Page"></param>
+            <param name="Limit"></param>
+            <returns>Task to get stats data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetStats(ChampionGG.Models.Role,System.Threading.CancellationToken,System.Int32,System.Int32)">
+            <summary>Returns stats data for specific role</summary>
+            <param name="Role"></param>
+            <param name="CancelToken"></param>
+            <param name="Page"></param>
+            <param name="Limit"></param>
+            <returns>Task to get stats data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetStats(ChampionGG.Models.Role,ChampionGG.Models.StatsRoleAspect,System.Int32,System.Int32)">
+            <summary>Returns stats data for specific role by aspect</summary>
+            <param name="Role"></param>
+            <param name="StatsRoleAspect"></param>
+            <param name="Page"></param>
+            <param name="Limit"></param>
+            <returns>Task to get stats data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.GetStats(ChampionGG.Models.Role,ChampionGG.Models.StatsRoleAspect,System.Threading.CancellationToken,System.Int32,System.Int32)">
+            <summary>Returns stats data for specific role by aspect</summary>
+            <param name="Role"></param>
+            <param name="StatsRoleAspect"></param>
+            <param name="CancelToken"></param>
+            <param name="Page"></param>
+            <param name="Limit"></param>
+            <returns>Task to get stats data</returns>
+        </member>
+        <member name="M:ChampionGG.Api.Get``1(System.String,System.Threading.CancellationToken,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>Performs http request to the champion.gg api</summary>
+            <typeparam name="T">Type of returning object</typeparam>
+            <param name="BaseExtension"></param>
+            <param name="CancelToken"></param>
+            <param name="Page"></param>
+            <param name="Limit"></param>
+            <returns>Deserialized http response</returns>
+            <exception cref="T:ChampionGG.Exception">ChampionGG.Exception</exception>
+        </member>
+        <member name="T:ChampionGG.ErrorResponse">
+            <summary>Deserialized server error response</summary>
+        </member>
+        <member name="P:ChampionGG.ErrorResponse.Message">
+            <summary>Server error message</summary>
+        </member>
+        <member name="T:ChampionGG.Exception">
+            <summary>Exception of ChampionGG api</summary>
+        </member>
+        <member name="P:ChampionGG.Exception.StatusCode">
+            <summary>HTTP status code</summary>
+        </member>
+        <member name="P:ChampionGG.Exception.ResponseData">
+            <summary>Response data</summary>
+        </member>
+        <member name="M:ChampionGG.Exception.#ctor(System.String,System.String,System.Byte[],ChampionGG.Exception)">
+            <summary>Creates a ChampionGG Exception</summary>
+            <param name="message"></param>
+            <param name="statusCode"></param>
+            <param name="responseData"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:ChampionGG.Exception.ToString">
+            <summary>Converts ChampionGG Exception to string</summary>
+            <returns>HTTP Resonse</returns>
+        </member>
+        <member name="T:ChampionGG.Exception`1">
+            <summary>Holds class of T</summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:ChampionGG.Exception`1.Response">
+            <summary>Response</summary>
+        </member>
+        <member name="M:ChampionGG.Exception`1.#ctor(System.String,System.String,System.Byte[],`0,ChampionGG.Exception)">
+            <summary>Creates a ChampionGG Exception containing exception</summary>
+            <param name="message"></param>
+            <param name="statusCode"></param>
+            <param name="responseData"></param>
+            <param name="response"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:ChampionGG.Models.Role">
+            <summary>Allows to view data for a specific role</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Role.Top">
+            <summary>Top-lane</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Role.Middle">
+            <summary>Mid-lane</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Role.Jungle">
+            <summary>Jungle</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Role.Support">
+            <summary>Support/Utility</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Role.ADC">
+            <summary>ADC/Bottom</summary>
+        </member>
+        <member name="T:ChampionGG.Models.DataAspect">
+            <summary>Allows to view data with a certain aspect</summary>
+        </member>
+        <member name="F:ChampionGG.Models.DataAspect.MostPopular">
+            <summary>Shows most popular</summary>
+        </member>
+        <member name="F:ChampionGG.Models.DataAspect.MostWins">
+            <summary>Shows most winning</summary>
+        </member>
+        <member name="T:ChampionGG.Models.Champion">
+            <summary>Detailed champion model</summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.Key">
+            <summary>
+            Champion database key
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.Role">
+            <summary>
+            Role type that this data belongs to
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.OverallPosition">
+            <summary>
+            Position of the champion according to general ranking
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.Items">
+            <summary>
+            Final build information
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.FirstItems">
+            <summary>
+            Starting items information
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.ChampionMatrix">
+            <summary>
+            Numeric data for champion matrix analysis
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.Trinkets">
+            <summary>
+            Trinkets information
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.Summoners">
+            <summary>
+            Information on summoner spells
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.Runes">
+            <summary>
+            Runes information
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.ExperienceRate">
+            <summary>
+            Experience gaining rate
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.ExperienceSample">
+            <summary>
+            Experience sampling
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.PatchWin">
+            <summary>
+            Winrates for last 6 patches
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.PatchPlay">
+            <summary>
+            Play rates for last 6 patches
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.DamageComposition">
+            <summary>
+            Damage composition
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.Matchups">
+            <summary>
+            List of matchups information
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.General">
+            <summary>
+            General data on this champ
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.Skills">
+            <summary>
+            Skill information
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Champion.Masteries">
+            <summary>
+            Masteries information
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.OverallPosition">
+            <summary>Position in champion ranking</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.OverallPosition.Change">
+            <summary>
+            Position change since last patch
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.OverallPosition.Position">
+            <summary>
+            Actual position
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.ItemContainer">
+            <summary>Contains ItemSets</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.ItemContainer.MostGames">
+            <summary>
+            Information on most popular items
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.ItemContainer.HighestWinPercent">
+            <summary>
+            Information on most winning items
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.Trinket">
+            <summary>Trinket model</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.Trinket.Games">
+            <summary>
+            Number of games analyzed
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.Trinket.WinPercent">
+            <summary>
+            Winning percentage with this trinket
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.Trinket.Item">
+            <summary>
+            Trinket item data
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.SummonerContainer">
+            <summary>Contains Summonersets</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SummonerContainer.MostGames">
+            <summary>
+            Information on most popular summoner spells
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SummonerContainer.HighestWinPercent">
+            <summary>
+            Information on most winning summoner spells
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.RuneContainer">
+            <summary>Contains RuneSets</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.RuneContainer.MostGames">
+            <summary>
+            Information on most popular rune page
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.RuneContainer.HighestWinPercent">
+            <summary>
+            Information on most winning rune page
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.DamageComposition">
+            <summary>Damage split into true-damage, magic-damage and physical-damage</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.DamageComposition.TrueDamage">
+            <summary>
+            True damage percentage
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.DamageComposition.MagicDamage">
+            <summary>
+            Magic damage percentage
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.DamageComposition.PhysicalDamage">
+            <summary>
+            Physical damage percentage
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.GeneralContainer">
+            <summary>Contains general data</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.WinPercent">
+            <summary>
+            Win percent data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.PlayPercent">
+            <summary>
+            Play percent data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.BanRate">
+            <summary>
+            Ban rate data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.Experience">
+            <summary>
+            Experience data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.GoldEarned">
+            <summary>
+            Gold earned data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.Kills">
+            <summary>
+            Kills data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.Deaths">
+            <summary>
+            Deaths data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.Assists">
+            <summary>
+            ssists data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.TotalDamageDealtToChampions">
+            <summary>
+            Total damage dealt to champions data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.LargestKillingSpree">
+            <summary>
+            Largest killing spree data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.MinionsKilled">
+            <summary>
+            Minions killed data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.TotalHeal">
+            <summary>
+            Total heal data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.VisionWardsBought">
+            <summary>
+            Vision wards bought data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.WardsPlaced">
+            <summary>
+            Wards placed data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralContainer.WardsKilled">
+            <summary>
+            Wards killed data
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.GeneralData">
+            <summary>Model for a general data item</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralData.Change">
+            <summary>
+            Change since last patch
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.GeneralData.Position">
+            <summary>
+            Current position
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.SkillContainer">
+            <summary>Contains SkillSets and SkillInfos</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SkillContainer.SkillInfo">
+            <summary>
+            Champion's skills data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SkillContainer.MostGames">
+            <summary>
+            Information on most popular skill order
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SkillContainer.HighestWinPercent">
+            <summary>
+            Information on most winning skill order
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.MasteryContainer">
+            <summary>Contains MasterySets</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.MasteryContainer.MostGames">
+            <summary>
+            Most popular masteries
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.MasteryContainer.HighestWinPercent">
+            <summary>
+            Most winning masteries
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.MasterySet">
+            <summary>Contains MasteryTrees aswell as their stats</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.MasterySet.WinPercent">
+            <summary>
+            Winning percentage for masteries
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.MasterySet.Games">
+            <summary>
+            Number of games analyzed
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.MasterySet.MasteryTrees">
+            <summary>
+            Detailed masteries information
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.MasteryTree">
+            <summary>Contains masteries</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.MasteryTree.Name">
+            <summary>
+            Tree for these masteries
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.MasteryTree.Total">
+            <summary>
+            Total points used in this tree
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.MasteryTree.Masteries">
+            <summary>
+            Specific mastery data
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.Mastery">
+            <summary>Mastery model</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.Mastery.Points">
+            <summary>
+            Points used in this mastery
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.Mastery.Id">
+            <summary>
+            Mastery id
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.ItemSet">
+            <summary>Contains items aswell as their stats</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.ItemSet.Items">
+            <summary>
+            List of items
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.ItemSet.WinPercent">
+            <summary>
+            Win Percentage for these items
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.ItemSet.Games">
+            <summary>
+            Number of games analyzed
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.MatchupSet">
+            <summary>Matchups divided by roles</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.MatchupSet.Role">
+            <summary>
+            Human readable role type
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.MatchupSet.Matchups">
+            <summary>
+            List of matchups
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.Matchup">
+            <summary>Matchup a champion has to a certain opponent</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.Matchup.Games">
+            <summary>
+            Number of matches analyzed
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.Matchup.StatScore">
+            <summary>
+            Score for this matchup
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.Matchup.WinRate">
+            <summary>
+            Win rate versus this champ
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.Matchup.WinRateChange">
+            <summary>
+            Win rate change since last patch
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.Matchup.Key">
+            <summary>
+            Enemy champion key
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.RuneSet">
+            <summary>Contains runes as well as their stats</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.RuneSet.Runes">
+            <summary>
+            Most popular rune page
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.RuneSet.WinPercent">
+            <summary>
+            Winning percentage for this rune page
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.RuneSet.Games">
+            <summary>
+            Number of games analyzed
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.SkillInfo">
+            <summary>Contains information about a skill (eg name)</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SkillInfo.Name">
+            <summary>
+            Skill name
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SkillInfo.Key">
+            <summary>
+            Default skill key
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.SkillSet">
+            <summary>Contains skills aswell as their stats</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SkillSet.Order">
+            <summary>
+            Skill order
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SkillSet.WinPercent">
+            <summary>
+            Win percentage for this skill order
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SkillSet.Games">
+            <summary>
+            Number of games analyzed
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionModels.SummonerSet">
+            <summary>Contains summoners aswell as their stats</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SummonerSet.Summoner1">
+            <summary>
+            Summoner1 spell data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SummonerSet.Summoner2">
+            <summary>
+            Summoner2 spell data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SummonerSet.WinPercent">
+            <summary>
+            Winning percentage with these summoner spells
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionModels.SummonerSet.Games">
+            <summary>
+            Number of games analyzed
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ChampionBasic">
+            <summary>Basic champion model</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionBasic.Key">
+            <summary>
+            Champion database key
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionBasic.LastUpdated">
+            <summary>
+            Timestamp for last update (in seconds)
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionBasic.Name">
+            <summary>
+            Champion's name
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ChampionBasic.Roles">
+            <summary>
+            Specific data for each role
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.RoleSet">
+            <summary>Role of basic champion</summary>
+        </member>
+        <member name="P:ChampionGG.Models.RoleSet.Games">
+            <summary>
+            Number of games analyzed for this champ/role combo
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.RoleSet.PercentPlayed">
+            <summary>
+            Percentage of usage for this champ in this role
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.RoleSet.Type">
+            <summary>
+            Role type
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.ItemAspect">
+            <summary>Allows to view items with a certain aspect</summary>
+        </member>
+        <member name="F:ChampionGG.Models.ItemAspect.Starters">
+            <summary>Starting items (eg. Pots and a Ring)</summary>
+        </member>
+        <member name="F:ChampionGG.Models.ItemAspect.Finished">
+            <summary>Final build items</summary>
+        </member>
+        <member name="T:ChampionGG.Models.ItemSet">
+            <summary>Contains the items aswell as their stats</summary>
+        </member>
+        <member name="P:ChampionGG.Models.ItemSet.Games">
+            <summary>
+            Number of games analyzed
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ItemSet.WinPercent">
+            <summary>
+            Win percentage for these items
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ItemSet.Items">
+            <summary>
+            List of item ids
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.ItemSet.Role">
+            <summary>
+            Role this data is bound to
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.Item">
+            <summary>Item model</summary>
+        </member>
+        <member name="P:ChampionGG.Models.Item.Id">
+            <summary>
+            Item id
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Item.Name">
+            <summary>
+            Item name
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.Matchup">
+            <summary>Matchup a champion has to a certain opponent</summary>
+        </member>
+        <member name="P:ChampionGG.Models.Matchup.Games">
+            <summary>
+            Number of matches analyzed
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Matchup.StatScore">
+            <summary>
+            Score for this matchup
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Matchup.WinRate">
+            <summary>
+            Win rate versus this champ
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Matchup.Type">
+            <summary>
+            Role type
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.Rune">
+            <summary>Rune model</summary>
+        </member>
+        <member name="P:ChampionGG.Models.Rune.Id">
+            <summary>
+            Rune id
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Rune.Number">
+            <summary>
+            Quantity of this type of rune
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Rune.Name">
+            <summary>
+            Rune name
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Rune.Description">
+            <summary>
+            Rune description
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.RuneSet">
+            <summary>Contains runes aswell as their stats</summary>
+        </member>
+        <member name="P:ChampionGG.Models.RuneSet.Role">
+            <summary>
+            Role type
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.SkillSet">
+            <summary>Contains skills aswell as their stats</summary>
+        </member>
+        <member name="P:ChampionGG.Models.SkillSet.Type">
+            <summary>
+            Role type
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.Skill">
+            <summary>Skill model</summary>
+        </member>
+        <member name="P:ChampionGG.Models.Skill.Name">
+            <summary>
+            Ability name
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.StatsPage">
+            <summary>Contains stats with page control</summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsPage.Page">
+            <summary>
+            Current page
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsPage.Limit">
+            <summary>
+            Current limit
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsPage.Stats">
+            <summary>
+            Stats
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.Stats">
+            <summary>Contains stats-container for a champ/role combination</summary>
+        </member>
+        <member name="P:ChampionGG.Models.Stats.Key">
+            <summary>
+            Champion key
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Stats.Role">
+            <summary>
+            Role type
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.Stats.General">
+            <summary>
+            Champion key
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.StatsListItem">
+            <summary>Contains stats-container for a champ/role combination</summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsListItem.Name">
+            <summary>
+            Champion name
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.StatsContainer">
+            <summary>Contains a variety of different statistics</summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.WinPercent">
+            <summary>
+            Win percentage
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.PlayPercent">
+            <summary>
+            Play percentage
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.BanRate">
+            <summary>
+            Ban rate
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.Experience">
+            <summary>
+            Average experience
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.Kills">
+            <summary>
+            Average kills
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.Deaths">
+            <summary>
+            Average deaths
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.Assists">
+            <summary>
+            Average assists
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.TotalDamageDealtToChampions">
+            <summary>
+            Average damage dealt to champions
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.TotalDamageTaken">
+            <summary>
+            Average total damage taken
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.TotalHeal">
+            <summary>
+            Average total heal
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.LargestKillingSpree">
+            <summary>
+            Average largest killing spree
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.MinionsKilled">
+            <summary>
+            Average minions killed
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.NeutralMinionsKilledTeamJungle">
+            <summary>
+            Average neutral minions killed in own jungle
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.NeutralMinionsKilledEnemyJungle">
+            <summary>
+            Average neutral minions killed in enemy jungle
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.GoldEarned">
+            <summary>
+            Average gold earned
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.OverallPosition">
+            <summary>
+            Overall ranking for this champ in this role
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.StatsContainer.OverallPositionChange">
+            <summary>
+            Overall position change since last patch
+            </summary>
+        </member>
+        <member name="T:ChampionGG.Models.StatsAspect">
+            <summary>Aspect in which stats can be viewed</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsAspect.MostBanned">
+            <summary>View starting with most banned</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsAspect.LeastWinning">
+            <summary>View starting with least winning</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsAspect.MostWinning">
+            <summary>View starting with most winning</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsAspect.LeastPlayed">
+            <summary>View starting with least played</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsAspect.MostPlayed">
+            <summary>View starting with most played</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsAspect.BestRated">
+            <summary>View starting with best rated</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsAspect.WorstRated">
+            <summary>View starting with worst rated</summary>
+        </member>
+        <member name="T:ChampionGG.Models.StatsRoleAspect">
+            <summary>Aspect in wich role-stats can be viewed</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsRoleAspect.LeastWinning">
+            <summary>View starting with least winning</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsRoleAspect.MostWinning">
+            <summary>View starting with most winning</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsRoleAspect.LeastImproved">
+            <summary>View starting with least improved</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsRoleAspect.MostImproved">
+            <summary>View starting with most improved</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsRoleAspect.WorstPerformance">
+            <summary>View starting with worst performing</summary>
+        </member>
+        <member name="F:ChampionGG.Models.StatsRoleAspect.BestPerformance">
+            <summary>View starting with best performing</summary>
+        </member>
+        <member name="T:ChampionGG.Models.Summoner">
+            <summary>Summoner spells</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Summoner.Clarity">
+            <summary>Summonerspell: Clarity</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Summoner.Ghost">
+            <summary>Summonerspell: Ghost</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Summoner.Heal">
+            <summary>Summonerspell: Heal</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Summoner.Mark">
+            <summary>Summonerspell: Mark</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Summoner.Barrier">
+            <summary>Summonerspell: Barrier</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Summoner.Exhaust">
+            <summary>Summonerspell: Exhaust</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Summoner.Cleanse">
+            <summary>Summonerspell: Cleanse</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Summoner.Teleport">
+            <summary>Summonerspell: Teleport</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Summoner.Flash">
+            <summary>Summonerspell: Flash</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Summoner.Ignite">
+            <summary>Summonerspell: Ignite</summary>
+        </member>
+        <member name="F:ChampionGG.Models.Summoner.Smite">
+            <summary>Summonerspell: Smite</summary>
+        </member>
+        <member name="T:ChampionGG.Models.SummonerSet">
+            <summary>Contains summoners aswell as their stats</summary>
+        </member>
+        <member name="P:ChampionGG.Models.SummonerSet.Type">
+            <summary>
+            Role type
+            </summary>
+        </member>
+    </members>
+</doc>
