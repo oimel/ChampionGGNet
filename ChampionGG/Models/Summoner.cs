@@ -13,14 +13,14 @@ namespace ChampionGG.Models.ChampionModels
         /// Summoner1 spell data
         /// </summary>
         [JsonProperty("summoner1", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
-        [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        [JsonConverter(typeof(Json.Converters.SummonerConverter))]
         public Summoner Summoner1 { get; set; }
 
         /// <summary>
         /// Summoner2 spell data
         /// </summary>
         [JsonProperty("summoner2", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
-        [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        [JsonConverter(typeof(Json.Converters.SummonerConverter))]
         public Summoner Summoner2 { get; set; }
 
         /// <summary>
@@ -79,8 +79,34 @@ namespace ChampionGG.Models
 
     /// <summary>Contains summoners aswell as their stats</summary>
     [JsonObject(MemberSerialization.OptIn)]
-    public class SummonerSet : ChampionModels.SummonerSet
+    public class SummonerSet
     {
+        /// <summary>
+        /// Summoner1 spell data
+        /// </summary>        
+        [JsonProperty("summoner1", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public Summoner Summoner1 { get; set; }
+
+        /// <summary>
+        /// Summoner2 spell data
+        /// </summary>
+        [JsonProperty("summoner2", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
+        [JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
+        public Summoner Summoner2 { get; set; }
+
+        /// <summary>
+        /// Winning percentage with these summoner spells
+        /// </summary>
+        [JsonProperty("winPercent", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
+        public double? WinPercent { get; set; }
+
+        /// <summary>
+        /// Number of games analyzed
+        /// </summary>
+        [JsonProperty("games", Required = Required.Default, NullValueHandling = NullValueHandling.Ignore)]
+        public int? Games { get; set; }
+
         /// <summary>
         /// Role type
         /// </summary>

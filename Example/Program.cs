@@ -23,7 +23,7 @@ namespace Example
         private async static void Show()
         {
             try
-            { 
+            {
                 // Getting a list of all champions with basic information
                 var championList = await ChampionGG.GetBasicChampionList();
                 foreach (var champion in championList)
@@ -32,8 +32,13 @@ namespace Example
                     foreach (var role in champion.Roles)
                         roles += role.Type.ToString() + " ";
                     Console.WriteLine("{0}  Name: \"{1}\", Updated: {2}, Roles: {3}", champion.Key, champion.Name, champion.LastUpdated.ToString("yyyy-MM-dd HH:mm:ss"), roles);
-                }                
-                
+                }
+
+                // Getting detailed information about a specific champion
+                var championRoles = await ChampionGG.GetChampion("Taric");
+                foreach(var role in championRoles)                
+                    Console.WriteLine("Taric " + role.Role);                
+
                 // Getting all matchups for Ashe
                 var matchupSets = await ChampionGG.GetMatchups("Ashe");
                 foreach (var matchupSet in matchupSets)

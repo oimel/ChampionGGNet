@@ -1133,6 +1133,26 @@
         <member name="T:ChampionGG.Models.SummonerSet">
             <summary>Contains summoners aswell as their stats</summary>
         </member>
+        <member name="P:ChampionGG.Models.SummonerSet.Summoner1">
+            <summary>
+            Summoner1 spell data
+            </summary>        
+        </member>
+        <member name="P:ChampionGG.Models.SummonerSet.Summoner2">
+            <summary>
+            Summoner2 spell data
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.SummonerSet.WinPercent">
+            <summary>
+            Winning percentage with these summoner spells
+            </summary>
+        </member>
+        <member name="P:ChampionGG.Models.SummonerSet.Games">
+            <summary>
+            Number of games analyzed
+            </summary>
+        </member>
         <member name="P:ChampionGG.Models.SummonerSet.Type">
             <summary>
             Role type

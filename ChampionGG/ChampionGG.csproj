@@ -50,6 +50,7 @@
     <Compile Include="Api.cs" />
     <Compile Include="Exception.cs" />
     <Compile Include="Json\Converters\MicrosecondEpochConverter.cs" />
+    <Compile Include="Json\Converters\SummonerConverter.cs" />
     <Compile Include="Models\Champion.cs" />
     <Compile Include="Models\ChampionBasic.cs" />
     <Compile Include="Models\Item.cs" />

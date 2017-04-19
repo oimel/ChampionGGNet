@@ -1,5 +1,5 @@
 # Champion.GG Api .Net Wrapper
-A Wrapper for the API of the **League of Legends** statistics website **champion.gg**.
+A wrapper for the API of the **League of Legends** statistics website **champion.gg**.
 
 ## Requirements
 - Newtonsoft.Json
@@ -8,6 +8,12 @@ A Wrapper for the API of the **League of Legends** statistics website **champion
 ### Initializing api
 ```cs
 var ChampionGG = new ChampionGG.Api("YOUR API KEY HERE");
+```
+### Getting detailed information about a specific champion
+```cs
+var championRoles = await ChampionGG.GetChampion("Taric");
+foreach(var role in championRoles)                
+    Console.WriteLine("Taric " + role.Role);    
 ```
 ### Getting a list of all champions with basic information
 ```cs
